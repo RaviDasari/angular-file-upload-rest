@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Angular file upload sample</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>
+        <script>
+        //optional need to be loaded before angular-file-upload-shim(.min).js
+            window.FileAPI = {
+                //only one of jsPath or jsUrl.
+                jsUrl: 'js/FileAPI.min.js',
+                //only one of staticPath or flashUrl.
+                flashUrl: 'js/FileAPI.flash.swf',
+                //forceLoad: true, html5: false //to debug flash in HTML5 browsers
+                //noContentTimeout: 10000 (see #528)
+            }
+        </script>
+        <script src="js/ng-file-upload-shim.js"></script>
+        <script src="js/ng-file-upload.js"></script>
+    </head>
+
+    <body data-ng-app="fileUpload" data-ng-controller="MyCtrl">
+        <div class="btn btn-info" ngf-select ng-model="files">Upload using model $watch</div>
+    </body>
+    <script src="js/data.js"></script>
+    <script src="js/custom.js"></script>
+</html>
